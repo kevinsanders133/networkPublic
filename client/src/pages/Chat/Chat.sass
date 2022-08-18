@@ -1,0 +1,222 @@
+@mixin message
+    max-width: calc(100% - 10px)
+    padding: 10px
+    margin-top: 5px
+    border-radius: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 18px
+    cursor: pointer
+
+@mixin flexAlignCenter
+    display: flex
+    align-items: center
+
+@mixin defaultImage
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+
+@mixin icon
+    width: 50%
+    height: 50%
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center center
+    filter: invert(72%) sepia(22%) saturate(7%) hue-rotate(314deg) brightness(104%) contrast(87%)
+
+.chat-page-empty
+    @include flexAlignCenter
+    justify-content: center
+    width: 100%
+    height: 100%
+    &__message
+        width: fit-content
+        padding: 8px 18px
+        background-color: #e0e0e0
+        border-radius: 20px
+        margin-bottom: 100px
+        font-weight: 700
+    &__create-chat
+        background: #300beb
+        color: #fff
+        padding: 8px
+        font-weight: 700
+        border-radius: 5px
+        user-select: none
+        cursor: pointer
+
+.chat-page-container
+    display: flex
+    width: 100%
+    height: 100%
+
+.chat
+    display: flex
+    flex-direction: column
+    heigth: 100%
+    width: 65%
+    position: relative
+    &__upper-bar
+        height: 53px
+        display: flex
+        align-items: center
+        padding: 0 0 0 20px
+        font-weight: 700
+        font-size: 20px
+    &__main
+        height: calc(100% - 100px)
+        overflow-y: scroll
+        display: flex
+        flex-direction: column
+        padding: 0 0 7px 10px
+        background: #fff
+        scrollbar-color: #bebdbd #ffffff
+        // scrollbar-width: thin
+    &__main::-webkit-scrollbar
+        opacity: 0
+        width: 5px
+        transition: opacity 1s
+        position: absolute
+        left: 0
+    &__main:hover::-webkit-scrollbar-thumb
+        background: #bebdbd
+        border-radius: 10px
+    &__main::-webkit-scrollbar-thumb:hover
+        background: #929292
+    &__main:hover::-webkit-scrollbar
+        opacity: 1
+        transition: opacity 1s
+    &__left-message
+        @include message
+        align-self: flex-start
+        background: #7ce8fc
+    &__right-message
+        @include message
+        align-self: flex-end
+        background: #8dfc8d
+        margin-right: 10px
+    &__image
+        width: 100%
+        height: auto
+        @include defaultImage
+        border-radius: 10px
+        cursor: pointer
+    &__video
+        width: 400px
+        height: auto
+        border-radius: 10px
+        cursor: pointer
+    &__file
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        user-select: none
+        background: yellow
+        &-image-container
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            height: 60px
+            width: 60px
+        &-image
+            height: 60px
+            width: 50px
+            background-image: url(../../assets/svg/chat_info/file.svg)
+            @include defaultImage
+            border-radius: 10px
+        &-info
+            height: 50px
+            max-width: calc(100% - 60px)
+        &-name,
+        &-size
+            height: 50%
+            display: flex
+            align-items: center
+            user-select: none
+        &-name
+            display: inline-block
+            width: calc(100%)
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
+        &-size
+            font-size: 16px
+            
+    &__adjacent-text-image
+        padding: 10px
+    &__adjacent-text-video
+        padding: 10px
+    &__adjacent-text-file
+        padding-top: 10px
+    &__controlbar
+        &-container
+            @include flexAlignCenter
+            justify-content: space-between
+            position: relative
+            height: 50px
+        &-attachment,
+        &-smiles,
+        &-send
+            height: 50px
+            width: 50px
+        &-attachment
+            @include flexAlignCenter
+            position: relative
+            justify-content: center
+            &-icon,
+            &-input
+                position: absolute
+            &-icon
+                @include icon
+                height: 58%
+                width: 58%
+                background-image: url(/assets/svg/chat_control_bar/attachment.svg)
+                transform: rotate(180deg)
+            &-input
+                z-index: 6
+                height: 100%
+                width: 100%
+                cursor: pointer
+                opacity: 0
+            &-input::-webkit-file-upload-button
+                cursor: pointer
+        &-input
+            flex: 1 1 auto
+            min-height: 100%
+            outline: none
+            border: none
+            padding: 0 10px 0 10px
+            word-wrap: break-word
+            font-size: 16px
+        &-smiles
+            @include flexAlignCenter
+            justify-content: center
+            cursor: pointer
+            &-icon
+                @include icon
+                background-image: url(/assets/svg/chat_control_bar/smile.svg)
+        &-send
+            @include flexAlignCenter
+            justify-content: center
+            cursor: pointer
+            &-icon
+                @include icon
+                background-image: url(/assets/svg/chat_control_bar/send.svg)
+
+.no-padding
+    padding: 0
+
+.image-with-text
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+
+.chat-aside
+    position: relative
+    min-width: 30%
+    width: 35%
+    max-width: 45%
+    height: calc(100% - 5px)
+    overflow-x: hidden

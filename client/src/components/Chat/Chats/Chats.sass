@@ -1,0 +1,72 @@
+.chats
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 22%
+    height: 90vh
+    background: #fff
+    user-select: none
+    overflow: auto
+    &__header
+        height: 8%
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__back
+        width: 50px
+        height: 50px
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+    &__back:hover &__back-arrow
+        border-color: #929292
+    &__back-arrow
+        width: 17px
+        height: 17px
+        border-bottom: 4px #aaaaaa solid
+        border-left: 4px #aaaaaa solid
+        transform: rotate(45deg)
+        // justify-self: flex-end
+    &__search-container
+        width: 90%
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+    &__search
+        width: 95%
+        padding: 10px
+        border: none
+        outline: none
+        border-radius: 10px
+        background: #e4e4e4
+    &__search:focus
+        background: #d8d7d7
+    &__create
+        width: 25px
+        height: 25px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 0 0 auto
+        cursor: pointer
+    &__main
+        height: 92%
+        overflow-y: scroll
+        scrollbar-color: #bebdbd #ffffff
+        scrollbar-width: thin
+    &__main::-webkit-scrollbar
+        opacity: 0
+        width: 5px
+        transition: opacity 1s
+        position: absolute
+        left: 0
+    &__main:hover::-webkit-scrollbar-thumb
+        background: #bebdbd
+        border-radius: 10px
+    &__main::-webkit-scrollbar-thumb:hover
+        background: #929292
+    &__main:hover::-webkit-scrollbar
+        opacity: 1
+        transition: opacity 1s

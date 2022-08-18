@@ -1,0 +1,44 @@
+.avatar-dialog-container
+    position: fixed
+    inset: 0
+    z-index: 200
+    width: 100vw
+    height: 100vh
+    background-color: rgba(0, 0, 0, 0.7)
+    display: flex
+    justify-content: center
+    align-items: center
+
+.avatar-dialog
+    width: 400px
+    height: 250px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    border-radius: 30px
+    background-color: #fff
+    &__title
+        height: 40%
+        display: flex
+        justify-content: center
+        align-items: center
+    &__button-container
+        position: relative
+    &__button,
+    &__button-container
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 20%
+        border-top: 2px solid #dfdfdf
+        font-weight: 700
+        cursor: pointer
+    &__input
+        position: absolute
+        inset: 0
+        opacity: 0
+        cursor: pointer
+    &__text
+        user-select: none

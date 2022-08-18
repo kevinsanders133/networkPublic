@@ -1,0 +1,39 @@
+.login-form-container
+    grid-column: 1 / 3
+    grid-row: 2 / 3
+
+.title
+    width: fit-content
+    font-size: 40px
+    margin: 0 auto
+    
+.login-form
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 40%
+    margin: 50px auto 0 auto
+    padding: 40px
+    border-radius: 40px
+    -webkit-box-shadow: 0px 0px 26px 0px rgba(163, 168, 218, 1)
+    -moz-box-shadow: 0px 0px 26px 0px rgba(163, 168, 218, 1)
+    box-shadow: 0px 0px 26px 0px rgba(163, 168, 218, 1)
+    &__input
+        height: 50px
+        margin-bottom: 20px
+        font-size: 16px
+        border: 2px #000 solid
+        padding: 0 10px
+    &__input::placeholder
+        font-size: 16px
+    &__label
+        font-size: 18px
+        font-weight: 700
+        margin-bottom: 8px
+    &__submit
+        height: 50px
+        width: 40%
+        background: #000
+        font-size: 16px
+        color: white
+        cursor: pointer

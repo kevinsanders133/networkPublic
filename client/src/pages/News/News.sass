@@ -1,0 +1,144 @@
+@mixin imageDefaultStyles
+    background-repeat: no-repeat
+    background-position: center center
+
+@mixin icon
+    width: 25px
+    height: 25px
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center center
+    filter: invert(72%) sepia(22%) saturate(7%) hue-rotate(314deg) brightness(104%) contrast(87%)
+    cursor: pointer
+    
+.news
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    scrollbar-color: #bebdbd #ffffff
+    scrollbar-width: thin
+    padding-top: 10px
+
+.post
+    width: 50%
+    height: fit-content
+    margin-bottom: 20px
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 12px 12px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    &__content
+        width: 100%
+        height: 400px
+    &__image
+        width: 100%
+        height: 100%
+        background-position: center center
+        background-size: cover
+        background-repeat: no-repeat
+    &__video
+
+    &__album
+
+    &__upper-bar
+        height: 70px
+        display: flex
+        align-items: center
+        padding: 0 20px 0 10px
+    &__upper-bar-avatar
+        border-radius: 50%
+        width: 60px
+        height: 60px
+        user-select: none
+    &__upper-bar-info
+        margin: 15px
+        flex: 1 1 auto
+    &__upper-bar-name
+        font-weight: 900
+    &__upper-bar-settings
+        background-image: url(/assets/svg/post/settings.svg)
+        @include imageDefaultStyles
+        background-size: 20px
+        width: 40px
+        height: 70%
+        cursor: pointer
+        user-select: none
+    &__lower-bar
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        &-actions
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            position: relative
+            height: 100px
+            padding: 15px 25px
+            flex: 0 0 auto
+            &-icons
+                display: flex
+            &-likes
+                font-weight: 700
+            &-date
+                margin-top: 5px
+                font-size: 12px
+            &-like
+                @include icon
+                background-image: url(/assets/svg/post/like.svg)
+                transition: all 0.3s
+            &-share
+                @include icon
+                margin-left: 15px
+                background-image: url(/assets/svg/post/repost.svg)
+            &-show-dialog
+                position: absolute
+                bottom: 15px
+                right: 25px
+                text-decoration: underline
+                cursor: pointer
+        &-comment-bar
+            height: 60px
+            padding: 0 25px
+            display: flex
+            align-items: center
+            border-top: 1px solid rgb(205, 205, 205)
+            &-container
+                display: flex
+                align-items: center
+                justify-content: space-between
+                flex: 1 1 auto
+            &-input
+                width: 80%
+                height: calc(1em + 2px)
+                outline: none
+                border: none
+                overflow: hidden
+                resize: none
+                font-size: 16px
+            &-smiles
+                @include icon
+                background-image: url(/assets/svg/chat_control_bar/smile.svg)
+            &-send
+                @include icon
+                background-image: url(/assets/svg/chat_control_bar/send.svg)
+    &__lower-bar-like,
+    &__lower-bar-comment,
+    &__lower-bar-repost
+        @include imageDefaultStyles
+        background-size: 20px
+        width: 40px
+        height: 70%
+        cursor: pointer
+    &__lower-bar-like
+        background-image: url(/assets/svg/post/like.svg)
+    &__lower-bar-comment
+        background-image: url(/assets/svg/post/comment.svg)
+    &__lower-bar-repost
+        background-image: url(/assets/svg/post/repost.svg)
+
+.liked
+    color: #ee1414
+    filter: invert(30%) sepia(64%) saturate(4910%) hue-rotate(348deg) brightness(89%) contrast(112%)
+    transition: all 0.3s

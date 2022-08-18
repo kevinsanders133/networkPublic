@@ -1,0 +1,238 @@
+@mixin icon {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    filter: invert(72%) sepia(22%) saturate(7%) hue-rotate(314deg) brightness(104%) contrast(87%);
+    cursor: pointer;
+}
+
+.profile-publication-dialog-container {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0 10px;
+}
+
+.profile-publication {
+    &__left,
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        z-index: 300;
+        transition: 0.3s background-color;
+        cursor: pointer;
+        position: fixed;
+        top: calc(50% - 35px);
+    }
+    &__left:hover,
+    &__right:hover {
+        transition: 0.3s background-color;
+        background-color: rgb(214, 214, 214);
+    }
+    &__left {
+        left: 10px;
+    }
+    &__right {
+        right: 10px;
+    }
+    &__left-arrow {
+        transform: rotate(-90deg);
+    }
+    &__right-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+.profile-publication-dialog {
+    background-color: #fff;
+    width: 80%;
+    height: 90%;
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    box-shadow: 2px 2px 5px #000;
+    &__content-slider {
+        flex: 1 1 auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        &-left,
+        &-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(207, 207, 207, 0.9);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: 0.3s background-color;
+            cursor: pointer;
+        }
+        &-left-arrow {
+            transform: rotate(-90deg);
+        }
+        &-right-arrow {
+            transform: rotate(90deg);
+        }
+        &-carousel {
+            width: fit-content;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: flex-end;
+            margin-bottom: 50px;
+        }
+        &-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 5px;
+            -webkit-box-shadow: 0px 0px 2px 0px #000;
+            -moz-box-shadow: 0px 0px 2px 0px #000;
+            box-shadow: 0px 0px 2px 0px #000;
+            transition: background-color 0.1s;
+        }
+    }
+    &__close {
+        position: fixed;
+        top: 17px;
+        right: 17px;
+        cursor: pointer;
+    }
+    &__management-panel {
+        height: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &-header {
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            align-items: center;
+            border-bottom: 1px solid rgb(205, 205, 205);
+            padding: 15px;
+        }
+        &-header-avatar {
+            height: 50px;
+            width: 50px;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            align-self: flex-start;
+        }
+        &-header-main {
+            margin: 0 0 10px 15px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            word-break: break-word;
+
+        }
+        &-main {
+            flex: 1 1 auto;
+            overflow-y: scroll;
+        }
+        &-comment {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+        &-comment-avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            flex: 0 0 auto;
+        }
+        &-comment-main {
+            margin-left: 15px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            word-break: break-word;
+        }
+        &-actions {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+            padding: 15px 25px;
+            border-top: 1px solid rgb(205, 205, 205);
+            flex: 0 0 auto;
+            &-icons {
+                display: flex;
+            }
+            &-likes {
+                font-weight: 700;
+            }
+            &-date {
+                margin-top: 5px;
+                font-size: 12px;
+                
+            }
+            &-like {
+                @include icon;
+                background-image: url(/assets/svg/post/like.svg);
+            }
+            &-share {
+                @include icon;
+                margin-left: 15px;
+                background-image: url(/assets/svg/post/repost.svg);
+            }
+        }
+        &-comment-bar {
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgb(205, 205, 205);
+            &-container {
+                display: flex;
+                justify-content: space-between;
+                flex: 1 1 auto;
+            }
+            &-input {
+                width: calc(100% - 50px);
+                height: fit-content;
+                outline: none;
+                border: none;
+                overflow:hidden;
+                padding: 0 10px 0 10px;
+                resize: none;
+                font-size: 16px;
+            }
+            &-smiles {
+                @include icon;
+                background-image: url(/assets/svg/chat_control_bar/smile.svg)
+            }
+            &-send {
+                @include icon;
+                background-image: url(/assets/svg/chat_control_bar/send.svg)
+            }
+        }
+    }
+}
+    

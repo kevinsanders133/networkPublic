@@ -1,0 +1,144 @@
+.files-bar
+    position: absolute
+    top: 0
+    z-index: 100
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+    // background-color: #f3f3f3
+    background-color: #fff
+    transform: translateX(105%)
+    animation-fill-mode: forwards
+    &__main
+        overflow-y: scroll
+        display: flex
+        flex-wrap: wrap
+    &__main::-webkit-scrollbar
+        opacity: 0
+        width: 5px
+        transition: opacity 1s
+        position: absolute
+        left: 0
+    &__main:hover::-webkit-scrollbar-thumb
+        background: #bebdbd
+        border-radius: 10px
+    &__main::-webkit-scrollbar-thumb:hover
+        background: #929292
+    &__main:hover::-webkit-scrollbar
+        opacity: 1
+        transition: opacity 1s
+    &__image
+        object-fit: cover
+        object-position: center
+        width: calc(50%)
+        padding: calc(1%)
+        aspect-ratio: 1 / 1
+        cursor: pointer
+    &__video
+        width: calc(50%)
+        padding: calc(1%)
+        aspect-ratio: 1 / 1
+        cursor: pointer
+        object-fit: cover
+        object-position: center
+    &__file
+        width: calc(95%)
+        display: flex
+        justify-content: space-between
+        overflow: hidden
+        align-items: center
+        margin: 0 auto 5px
+        font-size: 1.1vw
+        user-select: none
+        cursor: pointer
+        text-decoration: none
+        color: #000
+    &__file-image
+        object-fit: cover
+        object-position: center center
+        width: calc(23%)
+        aspect-ratio: 1 / 1
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 30px
+        border-radius: 5px
+        color: #fff
+    &__file-info
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 72%
+        height: 90%
+    &__file-name
+        font-weight: 700
+        height: 1.3em
+        width: calc(100%)
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+    &__file-size
+        height: 1em
+    &__file-date
+        height: 1em
+    &__link
+        width: 95%
+        height: 16%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 0 auto 5px
+        font-size: 1.1vw
+    &__link-img
+        object-fit: cover
+        object-position: center center
+        width: 23%
+        aspect-ratio: 1 / 1
+    &__link-info
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 72%
+        height: 60%
+    &__link-name
+        font-weight: 700
+    &__link-body
+        height: 80%
+        overflow: hidden
+        text-overflow: ellipsis
+        font-size: 1vw
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        
+    
+
+
+/*
+    pdf
+    doc, docx
+    jpg, png, webp, jpeg
+    mp3
+    mp4
+    rar, zip, 7z
+
+.files-show
+    animation-name: showFiles
+    animation-duration: 0.2s
+
+.files-hide
+    animation-name: hideFiles
+    animation-duration: 0.2s
+
+@keyframes showFiles
+    0%
+        
+    100%
+        transform: translateX(0)
+        
+@keyframes hideFiles
+    0%
+       transform: translateX(0) 
+    100%
+        transform: translateX(105%)

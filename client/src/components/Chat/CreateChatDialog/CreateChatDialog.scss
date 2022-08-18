@@ -1,0 +1,129 @@
+.create-chat-dialog-container {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0 10px;
+}
+
+.create-chat-dialog {
+    height: 70%;
+    width: 400px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    &__header {
+        height: 50px;
+        border-bottom: 2px rgb(231, 231, 231) solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        user-select: none;
+    }
+    &__main {
+        overflow-y: scroll;
+        flex: 1 1 auto;
+    }
+    &__search {
+        height: fit-content;
+        width: 400px;
+        border-bottom: 2px rgb(231, 231, 231) solid;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        & input {
+            height: 40px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 10px;
+        }
+        &-title-input {
+            outline: 3px solid white;
+        }
+        .title-input-error {
+            outline: 3px red solid;
+        }
+        .title-input-error::placeholder {
+            color: red;
+        }
+    }
+    &__selected-users {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        &-item {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            background: #dcfaff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+            &-nickname {
+                color: #0095f6;
+            }
+            &-close {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 20px 0;
+    }
+    &__avatar {
+        width: 60px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__nickname {
+        width: 70%;
+        font-size: 18px;
+    }
+    &__select {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px #000 solid;
+        cursor: pointer;
+    }
+    &__create {
+        width: 60px;
+        height: 30px;
+        // background-color: #300beb;
+        // background-color: #c6c6c6;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-self: flex-end;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+    }
+    &__close {
+        position: fixed;
+        top: 17px;
+        right: 17px;
+        cursor: pointer;
+    }
+}

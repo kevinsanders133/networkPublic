@@ -1,0 +1,102 @@
+.followers {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    &__header {
+        margin-bottom: 50px;
+    }
+    &__input {
+        width: 300px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background-color: rgb(233, 233, 233);
+        border-radius: 10px;
+        padding: 0 20px;
+        font-size: 16px;
+        font-family: sans-serif;
+    }
+    &__input:focus {
+        background: red;
+    }
+    &__submit {
+
+    }
+    &__main {
+        height: 80%;
+    }
+    &__list {
+        list-style: none;
+        height: 100%;
+        // overflow-y: scroll;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        background: rgb(242, 242, 242);
+        padding: 10px;
+        width: 50%;
+        border-radius: 10px;
+        user-select: none;
+    }
+    &__item:hover {
+        transition: background-color 0.3s;
+        background: rgb(224, 224, 224);
+    }
+    &__item-link {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+    }
+    &__item-avatar {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        flex: 0 1 auto;
+        align-self: flex-start;
+    }
+    &__item-nickname {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+    &__item-follow-button,
+    &__item-unfollow-button {
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 20px;
+        width: 80px;
+        height: 30px;
+        border-radius:28px;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 17px;
+        transition: background-color 0.3s;
+    }
+    &__item-follow-button {
+        background-color: #03d7fc;
+    }
+    &__item-unfollow-button {
+        color: #03d7fc;
+        background-color: rgb(255, 255, 255);
+        outline: 2px solid #03d7fc;
+    }
+    &__item-follow-button:hover {
+        background-color: #47e2fe;
+        transition: background-color 0.3s;
+    }
+    &__item-unfollow-button:hover {
+        background-color: rgb(228, 228, 228);
+        transition: background-color 0.3s;
+    }
+}
